@@ -6,8 +6,8 @@ Find the flag from given pcap file
 ## ✨Solution
 ### Step 1
 
-The [wireshark](https://www.wireshark.org/)'s Export Object -> HTTP shows us there are totally 3 files transmitted in the given capture. The text file says
-`Hey Have you heard about hiding texts inside images????!!!` . So it is definitely image steganography. Luckly we have a PNG file in it.
+The [wireshark](https://www.wireshark.org/)'s Export Object -> HTTP shows us there are totally 3 files transmitted in the given capture. There were 2 PNG file and text file. The text file says`Hey Have you heard about hiding texts inside images????!!!` . So it is definitely image steganography. 
+Luckly we have a PNG file in it.
 
 
 ### Step 2
