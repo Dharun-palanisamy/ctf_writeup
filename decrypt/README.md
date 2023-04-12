@@ -6,13 +6,13 @@ however they are clever enough 	that no one gets anything. Please help me out to
 
 ## ✨Solution
 ### Step 1
-<p>
+
 Before start with anything it is always good to gain basic infomation about given file, in our case it is pcap file so. 
-Binwalk gave us pcap have png file and PGP message.
+[Binwalk](https://en.kali.tools/?p=1634) gave us pcap have png file and PGP message.
 <p align="center">
   <img width="500" align="center" src="src/binwalk.png" alt="binwalk"/>
 </p>
-</p>
+
 
 ###  Step 2
 <p>
@@ -28,15 +28,16 @@ at same time but still a possibility.
 </p>
 
 ###  Step 3
-<p>
+
 So clearly we have identified the receiver IP. Now we filter the packets with receiver IP. There is a lot of TCP handshake going on and lot of TLS 
 packets but clearly most of TLS the packets are short to have PGP private key. When we look at the DNS packets, they are long than other dns packets.
 They have extra trailer bits. In the first packet it says PNG in the trailer sequence. The first few HEX value is same as PNG header. We have located 
 the PNG image what binwalk told us about. We extract the hex data and create a file. It looks like a part of QR code. This is a good lead. 
 Now we extract all HEX value in trailer of the filtered packets. These HEX values are cascaded to form a single PNG file. 
-This process can be automated using a python script with scapy library but it I did it using Ghex manually which is lot of work.
+This process can be automated using a python script with [scapy](https://scapy.readthedocs.io/en/latest/) library but it I did it using 
+[Ghex](https://wiki.gnome.org/Apps/Ghex) manually which is lot of work.
 We decrypt QR code in PNG which gives us the PGP private key.
-</P>
+
 <p align="center">
   <img width="500" align="center" src="src/dnstrailer.png" alt="DNS Trailer"/>
 </p>
@@ -45,11 +46,11 @@ We decrypt QR code in PNG which gives us the PGP private key.
 </p>
 
 ###  Step 4
-<p>
+
 To solve the last part of the puzzle we need passcode. At this point, we can use John the Ripper to bruteforce the passcode but it is always good to 
 look for it. The charecters obtain in step 2 was use to decypt but not usefull. Then our last resort is is our PNG file. So steganography?? The 
 EXIF data of PNG has comment saying `helloworld` . This comment turns out to be the passcode. We can use online decrypter to decrypt PGP message.
-</p>
+
 <p align="center">
   <img width="500" align="center" src="src/exif.png" alt="EXIF Data"/>
 </p>
