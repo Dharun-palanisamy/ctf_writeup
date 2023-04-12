@@ -56,4 +56,6 @@ EXIF data of PNG has comment saying `helloworld` . This comment turns out to be 
 </p>
 
 ##  🚩Flag
+<p>
 flag{eNcryP7!ng_t0_PgP_1s_r34LLy_Pre3tY_g00D_pr1V4cY}
+</p>
