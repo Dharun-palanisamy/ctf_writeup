@@ -20,4 +20,6 @@ After a doing lot of tweak in image and trying different tools, I ended up disco
 </p>
 
 ##  🚩Flag
+<p>
 wired{b1g_m4n_1n_a_su1t3_0f_4rm0r}
+</p>
