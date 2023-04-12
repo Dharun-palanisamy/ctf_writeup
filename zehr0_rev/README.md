@@ -10,6 +10,7 @@ From here onwards it is basic binary reversing.
 <p align="center">
   <img width="500" align="center" src="binwalk.png" alt="Binwalk"/>
 </p>
+
 ### Step 2
 [Ghidra](https://ghidra-sre.org/) is used to decompile the binary file. The decompiled code tells us that it takes the input from user and perform 
 xor operation with binary value that is obtained from ` "sup3r_s3cr3t_k3y_1337"[j] - 0x22` and checks the resultant binary value with locally stored values.
