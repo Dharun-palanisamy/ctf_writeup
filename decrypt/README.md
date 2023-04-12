@@ -51,7 +51,7 @@ look for it. The charecters obtain in step 2 was use to decypt but not usefull. 
 EXIF data of PNG has comment saying `helloworld` . This comment turns out to be the passcode. We can use online decrypter to decrypt PGP message.
 </p>
 <p align="center">
-  <img width="500" align="center" src="exif.png" alt="EXIF Data"/>
+  <img width="500" align="center" src="src/exif.png" alt="EXIF Data"/>
 </p>
 
 ##  🚩Flag
